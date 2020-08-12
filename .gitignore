@@ -1,0 +1,10 @@
+.idea
+native_aarch64-linux-android
+native_arm-linux-androideabi
+native_i686-linux-android
+native_x86_64-linux-android
+ndk_19_arm
+ndk_19_x86
+ndk_21_1_6352462
+ndk_21_arm64
+ndk_21_x86_64
