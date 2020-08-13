@@ -11,7 +11,6 @@ function upload_file {
     BIN_NAME=${BIN_FN}_${BIN_SUFFIX}
 	  cp ${BIN_PATH}/${BIN_FN} $BIN_NAME
 	  echo "md5sum = `md5sum $BIN_NAME`";
-    echo "pass = $PASS"
     ./scp.expect $BIN_NAME $PASS
 }  
 
