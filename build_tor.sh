@@ -40,7 +40,7 @@ export PATH=$ANDROID_NDK_HOME/toolchains/llvm/prebuilt/linux-x86_64/bin:$ANDROID
 NATIVE_DIR="native_$PLATFORM"
 OPEN_SSL_LOCATION="$WORK_DIR/$NATIVE_DIR/openssl-$PLATFORM"
 
-rm -Rf $NATIVE_DIR
+#rm -Rf $NATIVE_DIR
 mkdir $NATIVE_DIR
 mkdir $NATIVE_DIR/lib
 mkdir $NATIVE_DIR/include
@@ -128,17 +128,11 @@ export CPPFLAGS=" ${CPPFLAGS} --sysroot=$ANDROID_TOOLCHAIN/sysroot -I$ANDROID_TO
 export LDFLAGS=" ${ARCH_LINK} -L$ANDROID_TOOLCHAIN/sysroot/usr/lib -L$ANDROID_TOOLCHAIN/lib -L../lib"
 
 ./autogen.sh
-./configure --host=$PLATFORM --disable-asciidoc --prefix=$ANDROID_TOOLCHAIN --with-openssl-dir=$OPEN_SSL_LOCATION --enable-static-openssl --with-libevent-dir=../lib --enable-static-libevent  --disable-silent-rules
+./configure --host=$PLATFORM --disable-tool-name-check --disable-asciidoc --prefix=$ANDROID_TOOLCHAIN --with-openssl-dir=$OPEN_SSL_LOCATION --enable-static-openssl --with-libevent-dir=../lib --enable-static-libevent  --disable-silent-rules
 
 make -j${JOBS}
 
 #tests fail on compilation, but tor is built (in src/or/tor)
 
 cd ..
-
-
-
-
-
-
 
