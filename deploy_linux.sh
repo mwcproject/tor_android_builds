@@ -5,8 +5,8 @@ set -x
 function upload_file {
     BIN_PATH=$1
     BIN_FN=$2
-    BIN_SUFFIX=$4
-    PASS=$5
+    BIN_SUFFIX=$3
+    PASS=$4
 
     BIN_NAME=${BIN_FN}_${BIN_SUFFIX}
 	  cp ${BIN_PATH}/${BIN_FN} $BIN_NAME
