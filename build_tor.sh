@@ -20,7 +20,7 @@ export COMPILE_ARCH=$3
 export ANDROID_EABI=$4
 export ANDROID_ARCH=$5
 
-export TOR_BRANCH="release-0.4.4"
+export TOR_BRANCH="release-0.4.5"
 
 export JOBS=16
 
